@@ -3,23 +3,40 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "dotenv -e ./configs/.env next dev",
+    "build": "dotenv -e ./configs/.env next build",
+    "start": "dotenv -e ./configs/.env next start",
+    "lint": "next lint",
+    "test:e2e": "dotenv -e ./configs/.env start-server-and-test --timeout 120000 dev http://localhost:3000 \"mocha -r ts-node/esm test/e2e/**/*.spec.ts\""
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.66.0",
+    "axios": "^1.7.9",
+    "next": "15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.1.6"
+    "styled-components": "^6.1.15"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@types/chai": "^5.0.1",
+    "@types/mocha": "^10.0.10",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/selenium-webdriver": "^4.1.28",
+    "@types/styled-components": "^5.1.34",
+    "babel-plugin-styled-components": "^2.1.4",
+    "chai": "^5.1.2",
+    "chromedriver": "^133.0.0",
+    "dotenv-cli": "^8.0.0",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
-    "@eslint/eslintrc": "^3"
+    "mocha": "^11.1.0",
+    "next-svgr": "^0.0.2",
+    "selenium-webdriver": "^4.28.1",
+    "start-server-and-test": "^2.0.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5"
   }
 }
