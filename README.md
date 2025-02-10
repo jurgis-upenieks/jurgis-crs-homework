@@ -1,1 +1,1 @@
-The readme is https://jurgis-crs-homework.afla.lv/technical-description
+The readme is on https://jurgis-crs-homework.afla.lv/technical-description
